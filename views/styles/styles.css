@@ -1,0 +1,316 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(135deg, #f6d365, #fda085);
+  background-size: 95%; 
+  background-position: left top;
+  background-repeat: repeat-y; 
+}
+  
+  h9 {
+    font-size: 130px;
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  middle-center {
+    font-size: 5vw;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  below-middle-center {
+    font-size: 2.5vw;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .search-term {
+    
+    position: relative;
+    top: 30%;
+    left: calc(50% - 140px);
+  }
+  .search-term input {
+    display: inline-block;
+    width: 250px;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  .search-term select {
+    display: inline-block;
+    width: 250px;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .workshop-text {
+    font-size: 1.9em;
+    font-weight: bold;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+  }
+  .workshop-list {
+    font-size: 1.1em;
+    color: #333; 
+    position: relative;
+    top: 21%;
+    right: 27%;
+    margin: 5px 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .workshop-list2 {
+    font-size: 1.1em;
+    color: #333; 
+    position: relative;
+    top: 24%;
+    right: 27%;
+    margin: 5px 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .workshop-buttons {
+    font-size: 1.1em;
+    position: relative;
+    top: 24%;
+    right: 27%;
+    margin: 5px 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .workshop-buttons2 {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    margin-top: 20px;
+    top: 19%; 
+    left: 23%;
+    
+  }
+  .following {
+    
+    font-weight: bold;
+    color: #FF0000;
+    text-decoration: none; 
+    border: 1px solid #FF0000; 
+    padding: 0.1% 0.2%;
+    position: absolute;
+    top: 0.1%;
+    left: 70px;
+  }
+  .liked {
+    
+    font-weight: bold;
+    color: #FF0000;
+    text-decoration: none; 
+    border: 1px solid #FF0000; 
+    padding: 0.1% 0.2%;
+    position: absolute;
+    top: 0.1%;
+    left: 160px; 
+  }
+  .notification {
+    
+    font-weight: bold;
+    color: #FF0000;
+    text-decoration: none; 
+    border: 1px solid #FF0000; 
+    padding: 0.1% 0.2%;
+    position: absolute;
+    top: 0.1%;
+    left: 220px; 
+  }
+  .new-workshop {
+    
+    font-weight: bold;
+    color: #FF0000;
+    text-decoration: none; 
+    border: 1px solid #FF0000; 
+    padding: 0.1% 0.2%;
+    position: absolute;
+    top: 0.1%;
+    left: 330px; 
+  }
+  
+
+  a[href="javascript: history.go(-1)"]
+  {
+    color: blue;
+    text-decoration: underline;
+  }
+  
+  a[href^="/"] {
+    float: right;
+    clear: right;
+    text-decoration: none;
+    margin-top: 2px;
+  }
+  a[href^="/"] img{
+    width: calc(10vw / 4);
+    height: auto;
+    margin: 20px;
+  }
+  a[href="/signUp"],
+  a[href="/logIn"],
+  a[href="/logOut"]
+  {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    right: 1%;
+    font-size: 100%;
+  }
+  .image-link {
+    float: left;
+    clear: center;
+    position: absolute;
+    top: 20%;
+    left: calc(50% - 10vw / 2);
+  }
+  .image-link .image-resize {
+    margin: 10px; /* Adjust margin to create equal spacing */
+  }
+  
+  .image-link .image-resize img {
+    width: calc(10vw);
+    height: auto;
+  }
+
+  .search-button {
+    padding: 0.5% 1%;
+    background-color: red;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 30px;
+  }
+
+  .new-post-button {
+    padding: 0.5% 1%;
+    background-color: red;
+    color: white;
+    border: black;
+    border-radius: 5px;
+    cursor: pointer;
+
+    position: relative;
+    top: 18%;
+    left: 60%;
+    
+  }
+  
+
+
+  .searched-list {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+  }
+
+  .searched-list > :first-child {
+      margin-bottom: auto; /* Pushes the first item to the top and centers it */
+  }
+
+  .searched-list * {
+      font-size: 20px;
+      color: black;
+      margin: 5px 0; /* Optional: Add spacing between list items */
+  }
+
+  .follow-button {
+    padding: 0.5% 1%;
+    background-color: red;
+    color: white;
+    border: black;
+    border-radius: 5px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 18%;
+    left: 69%;
+  }
+
+  .delete-button {
+    padding: 0.5% 1%;
+    background-color: red;
+    color: white;
+    border: black;
+    border-radius: 5px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 10%;
+    left: 69%;
+    
+  }
+
+
+  .sign-up {
+    position: absolute;
+    top: 30%;
+    left: calc(50% - 85px);
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px;
+  }
+
+  .post {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    transform: translateX(-50%);
+  }
+  .comments {
+    position: absolute; 
+    left: 10%; 
+    top: 20%; 
+    transform: translateX(-50%);
+  }
+  .like-button {
+    width: 50px;
+    height: 50px; 
+  }
+  .user-link {
+    font-size: 5vw;
+  }
+  .resize-image {
+    width: 50%; 
+    height: auto; 
+    
+  }
+  
+
+
+
+ 

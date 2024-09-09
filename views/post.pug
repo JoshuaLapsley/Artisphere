@@ -1,0 +1,292 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Artisphere
+    link(rel="stylesheet", href="/styles/styles.css")
+  body
+    
+    a(href="/")
+      img(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAZlBMVEX///8AAADU1NT8/Pzf39/m5uaGhob5+fl8fHzOzs7r6+uoqKhERESNjY3u7u65ubliYmInJyeWlpYaGhrBwcFJSUkUFBRcXFw0NDSrq6tzc3NPT083NzcjIyNfX1/z8/MLCwstLS0ykXx6AAADrUlEQVR4nO2dWXYiMQxFEQXNlDCFITNk/5tMc/pkIFFRsi1bMv3uBkr36/EkCno9AAAAAAAAAADAgJH1ALnpH/vWI+RlQUQL6yFyMqMTM+sx8rGmf6ytB8nFmD4YW4+ShWZPX+wb63H0Gd3Qd26uLjXm93TO/dx6JF0GO/rJbmA9lCaTX34nJtZj6bFgBa8o+x9aBIkerEfT4bZVkOjWejgNxhcEryL7lxcFiZbWAybyI+c56s7+6apTkGg1tR4znsGdQJDortrs74v8TlTa+zdiQaKN9bAxzAIEq+z9l3Keo7rsfwwUJHq0HjmIsz4vpabef3iKECR6OlgPLmX+FiVI9FZJ7x9G+p0YWg8vge/zUiro/W19Xor73h+W8xzOsz805zlcZ//lPi/Fce/v6vNSvPb+0VZJkGjrsveL+rwUj72f2dun4G/nn5bzHM6yPzXnOVxlf3rOczjK/nX3tFG4uffr5DyHk+yP6fNS9tZyPdHePgX7nf/0Oasg0bNx9gv39inY7vz1c57DMPtD9vYpmO382+/z2hjd+zX6vBST3p8v5znKZ3+j1eelLAvv/Bu9Pi9lW1Rx+lJckOilYPYXyHmOctlfJuc5CmV/qZznKJL9efq8lAK9v2TOc2TP/vD7vDZ57/3Nq7XfX14zBmPkfV6bfPf+6Pu8Nrnu/cOjtdknxyz3fruc58iQ/Tn29imo7/xtc55DOftz7e1TUN35l+3zUhR7f+k+L0Xr3q94n9dG596vep/XRuPeP/CT8xzH5N7vK+c5ErPfss9LSer9/nKeIyH7PeY8R3T2+8x5jsjsz3mf1ybm3p/5Pq9N+L0/+31em9B7v9HePoWwnb/8vTpPBLzjV0POc4izv46c5xBmv/XePgXRzt9+b59C986/+H1em657v+M+L+Vy75977vNSVhd2/srft7ei/Xv+/vu8lJbeX2vOc7DZX2/OczDZX3POc/zK/nr6vJTz3l99znN8z/5D/TnPsf2897u5z2vzce8fXkfOc+yG15XzHBN/93ltFr1hB1PfH3U20y6Bts+oX/jeSmn8whQMbYEhDGFoDwxhCEN7YAhDGNoDQxjC0B4YwjDJ8E8IVRoGPaVKw5BXPRsYwhCGMIQhDGEIQxjCEIYwhCEMYQhDGMIQhjCEIQxhCEMYwhCGMIQhDGEIQxjCEIYwhCEMYQhDGMIQhjCEIQxhCEMYwhCGMIQhDGEIQxiWNBwNIgl6SuxDVP60CwAAAAAAAADAf8A7U25uWnkJ4kAAAAAASUVORK5CYII=', alt='Profile')
+    a(href=`/${userSession.userId}`)
+      img(src = "data:image/png;base64,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")
+    a(href=`/search`)
+      img(src = 'data:image/png;base64,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')
+    a(href=`/searchByParam`) 
+      img(src = 'data:image/png;base64,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')
+    a(href="/signUp") Sign Up 
+    a(href="/logIn") Log In
+    a(href="/logOut") Log Out
+    
+    a(href="javascript: history.go(-1)") Go Back
+    div(class = "post", id="postContainer")
+        a(href=`/${user._id}`,class = "user-link") #{user.username}
+        h3(id = "sus") #{post.Title}
+            
+        h4 #{post.Artist} - #{post.Year}
+        img(src=post.Poster, alt="Image",class = "resize-image")      
+        h3 Desciption: #{post.Description}
+        h4 Category: #{post.Category}
+        h4 Medium: #{post.Medium}
+        h3(id = "numLikes")  
+    div(id="reviewsContainer")
+    
+    
+    #leaveAReviewContainer
+    br
+    
+    br
+    
+    br
+    
+
+    script.
+        let userSession = !{JSON.stringify(userSession)};
+        let post = !{JSON.stringify(post)};
+        let user = !{JSON.stringify(user)};
+        if(!post.likes) { //Choose which way we want to show likes on the screen (changes depending on how many likes)
+            document.getElementById('numLikes').textContent = `0 likes`;
+        }else if(post.likes.length === 1) {
+            document.getElementById('numLikes').textContent = `${post.likes.length} like`;
+        }else{
+            document.getElementById('numLikes').textContent = `${post.likes.length} likes`;
+        }
+        
+
+
+        if(!post.reviews) {
+            post.reviews = [];
+        }
+  
+
+        if(user.username === userSession.username) { //If the user is viewing their own profile
+
+            
+
+            for (let i = 0; i < post.reviews.length; i++) { // Show all the reviews on the screen, and give the user the option to delete them
+                let review = post.reviews[i];
+
+                
+                let reviewText = document.createElement('p');
+                reviewText.textContent = review;
+                reviewText.id = `reviewText_${i}`; 
+
+                
+                let deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete Review';
+                deleteButton.id = `deleteButton_${i}`; 
+                deleteButton.addEventListener('click', function() {
+                    post.reviews.splice(i,1);
+                    sendPostData(post);
+                    location.reload();
+                });
+
+                
+                let container = document.getElementById('reviewsContainer');
+                container.appendChild(reviewText);
+                container.appendChild(deleteButton);
+                postContainer.appendChild(container);
+            }
+
+
+
+            var button = document.createElement("button");
+
+            button.innerHTML = "Delete Post"; //Creating the delete post button
+            button.classList.add("delete-button");
+            document.body.appendChild(button);
+
+            button.addEventListener("click", function() { //If the user clicks the button, send the data to the server to update.
+                const confirmation = confirm("Are you sure you want to delete this post?");
+                if(confirmation){
+                    const xhr = new XMLHttpRequest();
+                    const index = window.location.pathname.split('/')[2];
+                    xhr.open("DELETE", `/${user._id}/${index}`, true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+
+                    xhr.onload = function() {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            console.log("Post deleted successfully");
+                            // Redirect the user or perform other actions as needed
+                            window.location.href = `/${user._id}`;
+                        } else {
+                            console.error('Failed to delete the post');
+                            // Handle errors or notify the user accordingly
+                        }
+                    };
+
+                    xhr.onerror = function() {
+                        console.error('Error deleting the post');
+                        // Handle errors or notify the user accordingly
+                    };
+
+                    xhr.send(JSON.stringify(user));
+                }
+                //window.location.href = `/${user._id}/makePost`;
+            });
+        } else { //If the user isn't viwing their own account
+
+            
+
+            
+            const containerDiv = document.getElementById('reviewsContainer');
+
+            // Create input element
+            const inputElement = document.createElement('input');
+            inputElement.id = 'review';
+            inputElement.type = 'text';
+            inputElement.name = 'myInput';
+            inputElement.placeholder = 'Leave a Review';
+
+            // Create button element
+            const buttonElement = document.createElement('button');
+            buttonElement.id = 'submitButton';
+            buttonElement.type = 'submit';
+            buttonElement.textContent = 'Submit';
+
+            // Append input and button elements to the container div
+            containerDiv.appendChild(inputElement);
+            containerDiv.appendChild(buttonElement);
+
+            const space = document.createElement('br');
+
+            
+            let searchTerm = 
+                {
+                    username: userSession.username,
+                    userId: userSession.userId
+                };
+            
+            
+
+            const likeButton = document.createElement('img');
+            likeButton.id = 'likeButton';
+            likeButton.classList.add("like-button");
+            likeButton.style.cursor = 'pointer';
+            let found = false; // Initialize found flag
+            
+            if(post.likes) {
+                for (let i = 0; i < post.likes.length; i++) {
+                    if (post.likes[i].username === searchTerm.username) {
+                        found = true; 
+                        break; 
+                    }
+                }
+            }
+            //Change which state the like button is in
+            if (found) {
+                likeButton.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Heart_font_awesome.svg/240px-Heart_font_awesome.svg.png';
+            } else {
+                likeButton.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Heart_empty_font_awesome.svg/1024px-Heart_empty_font_awesome.svg.png";
+            }
+            
+
+            // Get container by ID and append input and button elements
+            let reviewContainer = document.getElementById('leaveAReviewContainer');
+            
+            //Display the like button to the screen
+            postContainer.appendChild(likeButton);
+            postContainer.appendChild(containerDiv);
+
+            for (let i = 0; i < post.reviews.length; i++) { //Display all the reviews on the screen
+                let review = post.reviews[i];
+
+                
+                let reviewText = document.createElement('p');
+                reviewText.textContent = review;
+                reviewText.id = `reviewText_${i}`; 
+                let container = document.getElementById('reviewsContainer');
+                container.appendChild(reviewText);
+            }
+
+        }
+        document.getElementById('submitButton').addEventListener('click', function() { //If the user presses, create review button, we add it and update the database
+            var reviewText = userSession.username + ": " + document.getElementById('review').value;
+            post.reviews.push(reviewText);
+
+            sendPostData(post);
+            document.getElementById('review').value = '';
+            location.reload();
+
+        });
+
+        document.getElementById('likeButton').addEventListener('click', function() { //If the user presses the like button, we update the server and database
+
+
+            let image = document.getElementById('likeButton').src;
+
+            let likedUser = 
+                {
+                    username: userSession.username,
+                    userId: userSession.userId
+                };
+            
+            let status = "notLiked";
+
+            if(image ===  "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Heart_empty_font_awesome.svg/1024px-Heart_empty_font_awesome.svg.png") {
+                document.getElementById('likeButton').src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Heart_font_awesome.svg/240px-Heart_font_awesome.svg.png';
+               
+                status = "liked";
+                if(!post.likes) {
+                    post.likes = [];
+                }                
+
+                post.likes.push(likedUser);
+                
+                
+            } else {
+                document.getElementById('likeButton').src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Heart_empty_font_awesome.svg/1024px-Heart_empty_font_awesome.svg.png";
+
+                
+                
+                let index = post.likes.indexOf(likedUser);
+                post.likes.splice(index,1);
+                
+                
+            }
+            sendPostData(post);
+            let sendData = 
+            {
+                username: userSession.username,
+                userId: userSession.userId,
+                status: status,
+                post: post
+            };
+
+            sendPostData(sendData);
+            location.reload();
+             
+
+        });
+
+        function sendPostData(post) { //If we make any changes we call this and update the post in the server and database
+            var xhr = new XMLHttpRequest();
+
+            // Set the URL and method for the request
+            const index = window.location.pathname.split('/')[2];
+            xhr.open("POST", `/${user._id}/${index}`, true);
+
+            // Set the request header
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            // Define what happens on successful data submission
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // handle successful response
+                    console.log("Changes saved successfully.");
+                } else {
+                    // handle error response
+                    console.error('Error saving changes:', xhr.status);
+                }
+            };
+
+            // Handle network errors
+            xhr.onerror = function () {
+                console.error('Network error occurred while saving changes.');
+            };
+
+            // Send the request with the JSON data
+            xhr.send(JSON.stringify(post));
+        }
+
+        
